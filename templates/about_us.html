@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with LeadMark landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Yarrabilba Health City</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="static/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + LeadMark main styles -->
+	<link rel="stylesheet" href="static/css/leadmark.css">
+</head>
+<script>
+    const observerOptions = {
+      root: null,
+      threshold: 0.4,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        } else {
+          entry.target.classList.remove('in-view');
+        }
+      });
+    }, observerOptions);
+    
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const sections = Array.from(document.getElementsByClassName('faderight'));
+    
+      for (let section of sections) {
+        observer.observe(section);
+      }
+    });
+ </script>
+
+ <style>
+    p{
+        font-size: medium;
+    }
+ </style>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- page Navigation -->
+    <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">    
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <!-- <img src="static/imgs/logo.svg" alt=""> -->
+                <h1 style="color: white;">Logo</h1>
+            </a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">                     
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#service">Our Service</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about_us">About Us</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/directory">Directory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="components.html" class="ml-4 nav-link btn btn-primary btn-sm rounded">Components</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Of Second Navigation -->
+
+    <!-- Page Header -->
+    <!-- <header class="header">
+       <div class="overlay">
+        <h1>WELCOME TO</h1>
+            <h1 class="title">Yarrabilba Health City</h1>  
+        </div>  
+        <div class="shape">
+            <svg viewBox="0 0 1500 200">
+                <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z"/>
+            </svg>
+        </div>  
+        <div class="mouse-icon"><div class="wheel"></div></div>
+    </header> -->
+    <!-- End Of Page Header -->
+
+    <!-- Service Section -->
+    <!-- <section  id="service" class="section pt-0">
+        <div class="container">
+            <h6 class="section-title text-center">Our Service</h6>
+            <h6 class="section-subtitle text-center mb-5 pb-3">Voluptates architecto provident deserunt.</h6>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 mb-md-0">
+                        <div class="card-body">
+                            <small class="text-primary font-weight-bold">01</small>
+                            <h5 class="card-title mt-3"> Beatae quo <h5>
+                            <p class="mb-0">Lorem ipsum dolor sit amet, cquasi cupiditate voluptate debitis saepe dolorem totam dolor repudiandae quo nihil, repellendus nesciunt ab fuga quae, minima reprehenderit sequi fugit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 mb-md-0">
+                        <div class="card-body">
+                            <small class="text-primary font-weight-bold">02</small>
+                            <h5 class="card-title mt-3">Delectus Suscipit<h5>
+                            <p class="mb-0">Lorem ipsum dolor sit amet, cquasi cupiditate voluptate debitis saepe dolorem totam dolor repudiandae quo nihil, repellendus nesciunt ab fuga quae, minima reprehenderit sequi fugit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 mb-md-0">
+                        <div class="card-body">
+                            <small class="text-primary font-weight-bold">03</small>
+                            <h5 class="card-title mt-3">Itaque harum<h5>
+                            <p class="mb-0">Lorem ipsum dolor sit amet, cquasi cupiditate voluptate debitis saepe dolorem totam dolor repudiandae quo nihil, repellendus nesciunt ab fuga quae, minima reprehenderit sequi fugit.</p>
+                        </div>
+                    </div>
+                </div>              
+            </div>
+        </div>
+    </section> -->
+    <!-- End OF Service Section -->
+
+    <!-- About Section -->
+    <section class="section" id="about" style="background-color: #007bff;height:fit-content;">
+        <div class="container" style="padding-top:50px;">
+            <div class="row justify-content-between">
+                <div class="col-md-6 pr-md-5 mb-4 mb-md-0">
+                    <h6 class="section-title mb-0">About Us</h6>
+                    <h6 class="section-subtitle mb-4">Yarrabilba Health City</h6>
+                    <img src="static/imgs/Yarrabilba Health City.jpeg" alt="" class="w-100 mt-3 shadow-sm" style="border-radius: 200px;margin-bottom: 50px;">
+                    <p style="font-size: large;">Welcome to Yarrabilba Health City (YHC), a beacon of health and wellness in the vibrant community of Yarrabilba, nestled within the dynamic city of Logan. Established in May 2023, YHC stands as a testament to the vision of dedicated health professionals who embarked on a journey in 2018 to bring healthcare accessibility and quality for the Yarrabilba community</p>
+                    <p>Driven by a collective passion for fostering healthier lifestyles and enhancing the well-being of residents, YHC was meticulously designed to meet the evolving healthcare needs of a rapidly growing population. Our state-of-the-art infrastructure serves as a cornerstone, providing a conducive environment for multiple healthcare providers to deliver exceptional services and personalised care.
+                    </p>
+                </div>
+                <div class="col-md-6 pl-md-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="static/imgs/about-1.jpg" alt="" class="w-100 shadow-sm" style="border-radius: 20px;">
+                        </div>
+                        <div class="col-6">
+                            <img src="static/imgs/about-2.jpg" alt="" class="w-100 shadow-sm" style="border-radius: 20px;">
+                        </div>
+                        <div class="col-12 mt-4" >
+                            
+                            <p>At YHC, we understand the importance of convenience and comfort in healthcare delivery. Our premises boast amazing facilities and ample parking, ensuring that every visit is not only beneficial but also stress-free. Whether you're seeking routine check-ups, specialised treatments, or preventive care, YHC strives to be your trusted partner in your health journey.
+                                <br>
+                            </p>
+                            <p>Central to our mission is the belief that healthcare should be accessible, affordable, and reliable for everyone in the community. We are committed to breaking down barriers to healthcare access, ensuring that no individual is left behind. As the population of Yarrabilba continues to grow, YHC remains steadfast in its commitment to cater to the ever-growing needs of our community, safeguarding the health and well-being of each resident.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>              
+        </div>
+    </section>
+    <!-- End OF About Section -->
+
+
+    <!-- Contact Section -->
+  
+	
+	<!-- core  -->
+    <script src="static/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="static/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="static/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Isotope -->
+    <script src="static/vendors/isotope/isotope.pkgd.js"></script>
+
+    <!-- LeadMark js -->
+    <script src="static/js/leadmark.js"></script>
+
+</body>
+</html>
