@@ -14,7 +14,7 @@
 */
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 :root {
-  --blue: #007bff;
+  --blue: #024694;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
@@ -11483,7 +11483,7 @@ textarea.form-control {
 }
 
 .header .shape svg path {
-  fill: #007bff;
+  fill: #024694;
 }
 
 @media (max-width: 1199.98px) {

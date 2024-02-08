@@ -50,9 +50,8 @@
     <!-- page Navigation -->
     <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#" style="background-color: #fefff4df; border-radius: 50px; padding: 10px;">
                 <img src="static/imgs/yhc_logo.png" alt="" style="width: 200px;">
-                <!-- <h1 style="color: white;">Logo</h1> -->
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -139,7 +138,7 @@
     <!-- End OF Service Section -->
 
     <!-- About Section -->
-    <section class="section" id="about" style="background-color: #007bff;">
+    <section class="section" id="about" style="background-color: #024694;">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-md-6 pr-md-5 mb-4 mb-md-0 faderight">
@@ -354,23 +353,24 @@
     <!-- End of portfolio section -->
 
     <!-- Blog Section -->
-    <section class="section" id="blog" style="background-color: #007bff;">
+    <section class="section" id="blog" style="background-color: #024694;">
         <div class="container faderight">
             <h6 class="section-title mb-0 text-center">Look through the practices at Yarrabilba Health City</h6>
             <h6 class="section-subtitle mb-5 text-center"></h6>
 
             <div class="row">
                 {% for practice in practices %}
-                <div class="col-md-4">
-                    <div class="card border-0 mb-4" >
-                        <img src="static/imgs/Radiant Radiology Logo.png" alt="" class="card-img-top w-100" style="border-radius: 20px; background-color: white ;">
-                        <div class="card-body">                         
-                            <h6 class="card-title">{{practice.title}}</h6>
-                            <!-- <p>Fuga quae ratione inventore Perferendis porro.</p> -->
-                            <a href="javascript:void(0)" class="small text-muted">Go To The Article</a>
+                    <div class="col-lg-4 col-md-6 mb-3 faderight">
+                        <div class="card border-0 shadow">
+                            <div class="card-img-top rounded-bottom d-flex justify-content-center align-items-center" style="overflow: hidden; height: 200px;background-color: rgb(255, 255, 255);">
+                                <img src="{{ url_for('get_image', image_id=practice.id) }}" alt="{{ practice.title }}" class="img-fluid" style="object-fit: cover; max-height: 100%; max-width: 100%;">
+                            </div>
+                            <div class="card-body bg-dark text-white rounded-top">
+                                <h5 class="card-title">{{ practice.title }}</h5>
+                                <a href="{{ url_for('practice_details', practice_id=practice.id) }}" class="btn btn-primary">Read More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 {% endfor %}
                 
                
@@ -380,7 +380,7 @@
     <!-- End of Blog Section -->
 
     <!-- Testmonial Section -->
-    <section class="section" id="testmonial" style="background-color: #007bffa1;">
+    <section class="section" id="testmonial" style="background-color: #024694a1;">
         <div class="container faderight">
             <h6 class="section-title text-center mb-0">Lease a space for your practice</h6>
             
@@ -440,13 +440,13 @@
             <div class="row align-items-center">
                 <div class="col-md-5 my-3">
                     <h6 class="mb-0">Phone</h6>
-                    <p class="mb-4">+ 123-456-7890</p>
+                    <p class="mb-4">--</p>
 
                     <h6 class="mb-0">Address</h6>
-                    <p class="mb-4">12345 Fake ST NoWhere AB Country</p>
+                    <p class="mb-4">Yarrabilba Health City, 26 - 36 Alder Circuit, Yarrabilba, QLD 4207</p>
 
                     <h6 class="mb-0">Email</h6>
-                    <p class="mb-0">info@website.com</p>
+                    <p class="mb-0">--</p>
                     <p></p>
                 </div>
                 <div class="col-md-7">
