@@ -6,9 +6,8 @@
     
     <title>Yarrabilba Health City</title>
     <!-- font icons -->
-    <link rel="stylesheet" href="static/vendors/themify-icons/css/themify-icons.css">
-    <!-- Bootstrap + LeadMark main styles -->
-	<link rel="stylesheet" href="static/css/leadmark.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/leadmark.css') }}">
 </head>
 <script>
     const observerOptions = {
@@ -77,61 +76,7 @@
             </div>
         </div>
     </nav>
-    <!-- End Of Second Navigation -->
 
-    <!-- Page Header -->
-    <!-- <header class="header">
-       <div class="overlay">
-        <h1>WELCOME TO</h1>
-            <h1 class="title">Yarrabilba Health City</h1>  
-        </div>  
-        <div class="shape">
-            <svg viewBox="0 0 1500 200">
-                <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z"/>
-            </svg>
-        </div>  
-        <div class="mouse-icon"><div class="wheel"></div></div>
-    </header> -->
-    <!-- End Of Page Header -->
-
-    <!-- Service Section -->
-    <!-- <section  id="service" class="section pt-0">
-        <div class="container">
-            <h6 class="section-title text-center">Our Service</h6>
-            <h6 class="section-subtitle text-center mb-5 pb-3">Voluptates architecto provident deserunt.</h6>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4 mb-md-0">
-                        <div class="card-body">
-                            <small class="text-primary font-weight-bold">01</small>
-                            <h5 class="card-title mt-3"> Beatae quo <h5>
-                            <p class="mb-0">Lorem ipsum dolor sit amet, cquasi cupiditate voluptate debitis saepe dolorem totam dolor repudiandae quo nihil, repellendus nesciunt ab fuga quae, minima reprehenderit sequi fugit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 mb-md-0">
-                        <div class="card-body">
-                            <small class="text-primary font-weight-bold">02</small>
-                            <h5 class="card-title mt-3">Delectus Suscipit<h5>
-                            <p class="mb-0">Lorem ipsum dolor sit amet, cquasi cupiditate voluptate debitis saepe dolorem totam dolor repudiandae quo nihil, repellendus nesciunt ab fuga quae, minima reprehenderit sequi fugit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4 mb-md-0">
-                        <div class="card-body">
-                            <small class="text-primary font-weight-bold">03</small>
-                            <h5 class="card-title mt-3">Itaque harum<h5>
-                            <p class="mb-0">Lorem ipsum dolor sit amet, cquasi cupiditate voluptate debitis saepe dolorem totam dolor repudiandae quo nihil, repellendus nesciunt ab fuga quae, minima reprehenderit sequi fugit.</p>
-                        </div>
-                    </div>
-                </div>              
-            </div>
-        </div>
-    </section> -->
-    <!-- End OF Service Section -->
 
      <!-- About Section -->
      <section class="section" id="about" style="background-color: white;">
@@ -162,7 +107,7 @@
     
 
 
-    <footer class="footer section has-img-bg pb-0">
+    <footer class="footer section has-img-bg pb-3" style="padding-top: 0;">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 my-3">
@@ -171,11 +116,11 @@
                     </a>        
                 </div>
                 <div class="col-md-3 my-3">
-                    <h6 class="mb-0">Visit Us</h6>
+                    <h6 class="mb-0" style="text-decoration: underline;">Visit Us</h6>
                     <p class="mb-4" style="color: white;">Yarrabilba Health City, 26 - 36 Alder Circuit, Yarrabilba, QLD 4207</p>
                 </div>
                 <div class="col-md-3 my-3">
-                    <h6 class="mb-0">More Links</h6>
+                    <h6 class="mb-0" style="text-decoration: underline;">More Links</h6>
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link" href="/about_us" style="color: white;">About Us</a>
@@ -189,7 +134,7 @@
                     </ul>
                 </div>
                 <div class="col-md-3 my-3">
-                    <h6 class="mb-0">Contact</h6>
+                    <h6 class="mb-0" style="text-decoration: underline;">Contact</h6>
                     <p class="mb-1" style="color: white;">Phone</p>
                     <br>
                     <p class="mb-0" style="color: white;">Email</p>
@@ -197,20 +142,21 @@
             </div>
         </div>
     </footer>
+
   
 	
-	<!-- core  -->
-    <script src="static/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="static/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- bootstrap 3 affix -->
-	<script src="static/vendors/bootstrap/bootstrap.affix.js"></script>
-
-    <!-- Isotope -->
-    <script src="static/vendors/isotope/isotope.pkgd.js"></script>
-
-    <!-- LeadMark js -->
-    <script src="static/js/leadmark.js"></script>
+    	<!-- core  -->
+        <script src="{{ url_for('static', filename='vendors/jquery/jquery-3.4.1.js') }}"></script>
+        <script src="{{ url_for('static', filename='vendors/bootstrap/bootstrap.bundle.js') }}"></script>
+        
+        <!-- bootstrap 3 affix -->
+        <script src="{{ url_for('static', filename='vendors/bootstrap/bootstrap.affix.js') }}"></script>
+        
+        <!-- Isotope -->
+        <script src="{{ url_for('static', filename='vendors/isotope/isotope.pkgd.js') }}"></script>
+        
+        <!-- LeadMark js -->
+        <script src="{{ url_for('static', filename='js/leadmark.js') }}"></script>
 
 </body>
 </html>

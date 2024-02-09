@@ -11426,10 +11426,15 @@ textarea.form-control {
 .header {
   position: relative;
   height: 100vh;
-  min-height: 500px;
-  background: url('../img/yhc_drone.mp4') no-repeat center center fixed;
+  min-height: 200px;
+  background: url('../imgs/yhc_building_2.jpeg') no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
+  /* background-position: 0 200%; */
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 
