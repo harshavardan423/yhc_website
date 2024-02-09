@@ -11427,10 +11427,11 @@ textarea.form-control {
   position: relative;
   height: 100vh;
   min-height: 500px;
-  background: url(../imgs/Yarrabilba\ Health\ City.jpeg) no-repeat center center fixed;
+  background: url('../img/yhc_drone.mp4') no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
 }
+
 
 .header .overlay {
   position: absolute;
@@ -11483,7 +11484,7 @@ textarea.form-control {
 }
 
 .header .shape svg path {
-  fill: #024694;
+  fill: white;
 }
 
 @media (max-width: 1199.98px) {

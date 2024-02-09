@@ -58,17 +58,17 @@
                         <a class="nav-link" href="#service">Our Service</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/" style="color: grey;">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about_us">About Us</a>
+                        <a class="nav-link" href="/about_us" style="color: grey;">About Us</a>
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="/directory">Directory</a>
+                        <a class="nav-link" href="/directory" style="color: grey;">Directory</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact Us</a>
+                        <a class="nav-link" href="/contact" style="color: grey;">Contact Us</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a href="components.html" class="ml-4 nav-link btn btn-primary btn-sm rounded">Components</a>
@@ -134,24 +134,25 @@
     <!-- End OF Service Section -->
 
      <!-- About Section -->
-     <section class="section" id="about" style="background-color: #024694;">
+     <section class="section" id="about" style="background-color: white;">
         <div class="container" style="padding-top: 50px;">
     
             <div class="row">
                 {% for practice in practices %}
-                    <div class="col-lg-4 col-md-6 mb-3 faderight">
-                        <div class="card border-0 shadow">
-                            <div class="card-img-top rounded-bottom d-flex justify-content-center align-items-center" style="overflow: hidden; height: 200px;background-color: rgb(255, 255, 255);">
-                                <img src="{{ url_for('get_image', image_id=practice.id) }}" alt="{{ practice.title }}" class="img-fluid" style="object-fit: cover; max-height: 100%; max-width: 100%;">
-                            </div>
-                            <div class="card-body bg-dark text-white rounded-top">
-                                <h5 class="card-title">{{ practice.title }}</h5>
-                                <p class="card-text">{{ practice.description }}</p>
-                                <a href="{{ url_for('practice_details', practice_id=practice.id) }}" class="btn btn-primary">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+<div class="col-lg-4 col-md-6 mb-3 faderight">
+    <div class="card border-0 shadow" style="height: 100%;">
+        <div class="card-img-top rounded-bottom d-flex justify-content-center align-items-center" style="overflow: hidden; height: 200px; background-color: rgb(255, 255, 255);">
+            <img src="{{ url_for('get_image', image_id=practice.id) }}" alt="{{ practice.title }}" class="img-fluid" style="object-fit: cover; max-height: 100%; max-width: 100%;">
+        </div>
+        <div class="card-body bg-dark text-white rounded-top" style="height: 150px;">
+            <h5 class="card-title">{{ practice.title }}</h5>
+            <!-- <p class="card-text">{{ practice.description }}</p> -->
+            <a href="{{ url_for('practice_details', practice_id=practice.id) }}" class="btn btn-primary">Read More</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
             </div>
             
             
@@ -161,7 +162,41 @@
     
 
 
-    <!-- Contact Section -->
+    <footer class="footer section has-img-bg pb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 my-3">
+                    <a class="navbar-brand" href="#" style="background-color: #fefff4df; border-radius: 50px; padding: 10px;">
+                        <img src="static/imgs/yhc_logo.png" alt="" style="width: 200px;">
+                    </a>        
+                </div>
+                <div class="col-md-3 my-3">
+                    <h6 class="mb-0">Visit Us</h6>
+                    <p class="mb-4" style="color: white;">Yarrabilba Health City, 26 - 36 Alder Circuit, Yarrabilba, QLD 4207</p>
+                </div>
+                <div class="col-md-3 my-3">
+                    <h6 class="mb-0">More Links</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about_us" style="color: white;">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/directory" style="color: white;">Directory</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact" style="color: white;">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 my-3">
+                    <h6 class="mb-0">Contact</h6>
+                    <p class="mb-1" style="color: white;">Phone</p>
+                    <br>
+                    <p class="mb-0" style="color: white;">Email</p>
+                </div>
+            </div>
+        </div>
+    </footer>
   
 	
 	<!-- core  -->
