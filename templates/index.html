@@ -367,18 +367,21 @@
 
             <div class="row">
                 {% for practice in practices %}
-                <div class="col-lg-4 col-md-6 mb-3">
-                    <div class="card border-0 shadow" style="height: 100%;">
-                        <div class="card-img-top rounded-bottom d-flex justify-content-center align-items-center" style="overflow: hidden; height: 200px; background-color: rgb(255, 255, 255);">
-                            <img src="{{ url_for('get_image', image_id=practice.id) }}" alt="{{ practice.title }}" class="img-fluid" style="object-fit: cover; max-height: 100%; max-width: 100%;">
-                        </div>
-                        <div class="card-body bg-dark text-white rounded-top" style="height: 150px;">
-                            <h5 class="card-title">{{ practice.title }}</h5>
-                            <a href="{{ url_for('practice_details', practice_id=practice.id) }}" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+<div class="col-lg-4 col-md-6 mb-3">
+    <div class="card border-0 shadow" style="height: 100%;">
+        <div class="card-img-top rounded-bottom d-flex justify-content-center align-items-center" style="overflow: hidden; height: 200px; background-color: rgb(255, 255, 255);">
+            {% set first_image = practice.images[0] %}
+            <img src="{{ url_for('get_image', image_id=first_image.id) }}" alt="{{ practice.title }}" class="img-fluid" style="object-fit: cover; max-height: 100%; max-width: 100%;">
+        </div>
+        <div class="card-body bg-dark text-white rounded-top" style="height: 150px;">
+            <h5 class="card-title">{{ practice.title }}</h5>
+            <!-- <p class="card-text">{{ practice.description }}</p> -->
+            <a href="{{ url_for('practice_details', practice_id=practice.id) }}" class="btn btn-primary">Read More</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
                 
                 
                

@@ -6,7 +6,27 @@
     <title>Practice Details</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/leadmark.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <!-- Replace 'css/leadmark.css' with the correct path if necessary -->
+
+    <!-- Make sure jQuery is included before Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ url_for('static', filename='vendors/bootstrap/bootstrap.bundle.js') }}"></script>
+
+<!-- Check the correct path for Bootstrap JS -->
+<script src="{{ url_for('static', filename='vendors/bootstrap/bootstrap.affix.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/isotope/isotope.pkgd.js') }}"></script>
+<script src="{{ url_for('static', filename='js/leadmark.js') }}"></script>
+
+<!-- Wrap your carousel initialization in DOMContentLoaded -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var carousel = new bootstrap.Carousel(document.querySelector('#carouselExampleControls'), {
+            interval: false // Optionally, specify the interval for automatic sliding
+        });
+    });
+</script>
 </head>     
 <script>
     const observerOptions = {
@@ -39,6 +59,21 @@
         font-size: medium;
         color: #024694;
     }   
+
+    /* Previous button */
+    .carousel-control-prev .carousel-control-prev-icon {
+        border: 2px solid rgb(0, 0, 0); /* Change border thickness and color as needed */
+        background-color: rgb(95, 138, 255);
+        border-radius: 50%; /* Make the border circular */
+    }
+
+    /* Next button */
+    .carousel-control-next .carousel-control-next-icon {
+        border: 2px solid rgb(0, 0, 0); /* Change border thickness and color as needed */
+        background-color: rgb(95, 138, 255);
+
+        border-radius: 50%; /* Make the border circular */
+    }
     
  </style>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" style="background-color: white;">
@@ -78,35 +113,50 @@
         </div>
     </div>
 </nav>
-    <!-- End Of Second Navigation -->
 
     <!-- About Section -->
-    <section class="section" id="about" style="background-color: white;">
-        <div class="container" style="padding-top:50px;" >
-            <div class="row justify-content-between">
-                <div class="col-md-6 pr-md-5 mb-4 mb-md-0">
-                    <img src="{{ url_for('get_image', image_id=practice.id) }}" alt="{{ practice.title }}" class="img-fluid" style="object-fit: cover;background-color: white;border-radius: 20px;">
-                   
-                </div>
-                <div class="col-md-6 pl-md-5">
-                    <div class="row" style="padding: 10px;text-align: justify;">
-                        <h6 class="section-title mb-0" style="color: #024694;">{{practice.title}}</h6>
-    
-                        <!-- <div class="col-12" > -->
-                            
-                            <p style="font-size: large;" >{{practice.description}}</p>
-                            <p style="font-size: medium;" >Contact - {{practice.contact}}</p>
-                            <p style="font-size: medium;" >Website -<a href="{{practice.website_link}}"> {{practice.website_link}}</a></p>
-
-                            
-                        <!-- </div> -->
-                    </div>
-                </div>
-                
-            </div>              
+<section class="section" id="about" style="background-color: white;">
+    <div class="container" style="padding-top:50px;">
+        <div class="row justify-content-between">
+            <div class="col-md-6 pr-md-5 mb-4 mb-md-0">
+                    <!-- End Of Second Navigation -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            {% for image in practice.images %}
+            <div class="carousel-item {% if loop.first %}active{% endif %}">
+                <img src="{{ url_for('get_image', image_id=image.id) }}" style="width: 50px;border-radius: 20px;" class="d-block w-100" alt="{{ practice.title }}" ">
+            </div>
+        {% endfor %}
         </div>
-    </section>
-    <!-- End OF About Section -->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+            </div>
+            <div class="col-md-6 pl-md-5">
+                <div class="row" style="padding: 10px;text-align: justify;">
+                    <h6 class="section-title mb-0" style="color: #024694;">{{practice.title}}</h6>
+                    <p style="font-size: large;" >{{practice.description}}</p>
+                    <p style="font-size: medium;" >Contact - {{practice.contact}}</p>
+                    <p style="font-size: medium;" >Website - <a href="{{practice.website_link}}"> {{practice.website_link}}</a></p>
+                </div>
+            </div>
+        </div>              
+    </div>
+</section>
+
+<!-- End OF About Section -->
+
 
 
     <footer class="footer section has-img-bg pb-3" style="padding-top: 0;">

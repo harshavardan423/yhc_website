@@ -5,13 +5,25 @@ from flask_login import UserMixin
 import os
 import base64
 from io import BytesIO
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 
+# Replace these variables with your actual Twilio SendGrid API key and email
+SENDGRID_API_KEY = 'YOUR_SENDGRID_API_KEY'
+TO_EMAIL = 'your_email@example.com'
 port = int(os.environ.get("PORT", 5000))
 
 
 
 db = SQLAlchemy()
+
+class Image(db.Model):
+    __tablename__ = 'image'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    practice_id = db.Column(db.Integer, db.ForeignKey('practice.id'))
+    image_data = db.Column(db.LargeBinary)
 
 class Practice(db.Model):
     __tablename__ = 'practice'
@@ -21,7 +33,8 @@ class Practice(db.Model):
     contact = db.Column(db.String(20))
     website_link = db.Column(db.String(100))
     description = db.Column(db.Text)
-    image = db.Column(db.LargeBinary)
+    images = db.relationship('Image', backref='practice', lazy=True)
+
    
 
 app = Flask(__name__)
@@ -54,6 +67,34 @@ with app.app_context():
 
 
 
+@app.route('/submit_form', methods=['POST'])
+def submit_form():
+    name = request.form['name']
+    email = request.form['email']
+    enquiry_type = request.form['enquiryType']
+    subject = request.form['subject']
+    message = request.form['message']
+
+    # Compose email message
+    message_content = f"Name: {name}\nEmail: {email}\nType of Inquiry: {enquiry_type}\nSubject: {subject}\nMessage: {message}"
+    message = Mail(
+        from_email=email,
+        to_emails=TO_EMAIL,
+        subject="New Inquiry from Website",
+        plain_text_content=message_content)
+
+    try:
+        sg = SendGridAPIClient(SENDGRID_API_KEY)
+        response = sg.send(message)
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
+    except Exception as e:
+        print(str(e))
+
+    return 'Form submitted successfully!'
+
+
 @app.route('/add_practice', methods=['GET', 'POST'])
 def add_practice():
     if request.method == 'POST':
@@ -61,18 +102,36 @@ def add_practice():
         contact = request.form['contact']
         website_link = request.form['website_link']
         description = request.form['description']
-        image = request.files['image'].read() if 'image' in request.files else None
+
+        # Get all images from the form
+        images = []
+        for file in request.files.getlist('images[]'):
+            if file:
+                images.append(file.read())
 
         new_practice = Practice(title=title, contact=contact, website_link=website_link,
-                                description=description, image=image)
+                                description=description)
         db.session.add(new_practice)
         db.session.commit()
+
+        # Save images associated with the practice
+        for image_data in images:
+            image = Image(practice_id=new_practice.id, image_data=image_data)
+            db.session.add(image)
+        db.session.commit()
+
         return redirect(url_for('index'))
     return render_template('add_practice.html')
 
 
+
 @app.route('/get_image/<int:image_id>')
 def get_image(image_id):
+    image = Image.query.get_or_404(image_id)
+    return send_file(BytesIO(image.image_data), mimetype='image/jpeg')
+
+@app.route('/get_practice_logo/<int:image_id>')
+def get_practice_logo(image_id):
     practice = Practice.query.get_or_404(image_id)
     if practice.image:
         return send_file(BytesIO(practice.image), mimetype='image/jpeg')

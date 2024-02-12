@@ -100,7 +100,8 @@
 <div class="col-lg-4 col-md-6 mb-3">
     <div class="card border-0 shadow" style="height: 100%;">
         <div class="card-img-top rounded-bottom d-flex justify-content-center align-items-center" style="overflow: hidden; height: 200px; background-color: rgb(255, 255, 255);">
-            <img src="{{ url_for('get_image', image_id=practice.id) }}" alt="{{ practice.title }}" class="img-fluid" style="object-fit: cover; max-height: 100%; max-width: 100%;">
+            {% set first_image = practice.images[0] %}
+            <img src="{{ url_for('get_image', image_id=first_image.id) }}" alt="{{ practice.title }}" class="img-fluid" style="object-fit: cover; max-height: 100%; max-width: 100%;">
         </div>
         <div class="card-body bg-dark text-white rounded-top" style="height: 150px;">
             <h5 class="card-title">{{ practice.title }}</h5>
@@ -110,6 +111,7 @@
     </div>
 </div>
 {% endfor %}
+
 
             </div>
             
@@ -124,7 +126,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 my-3">
-                    <a class="navbar-brand" href="#" style="background-color: white;; border-radius: 50px; padding: 10px;">
+                    <a class="navbar-brand" href="#" style="background-color: #fefff4df; border-radius: 50px; padding: 10px;">
                         <img src="static/imgs/yhc_logo.png" alt="" style="width: 200px;">
                     </a>        
                 </div>
