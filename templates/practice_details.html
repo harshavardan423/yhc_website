@@ -39,14 +39,16 @@
         font-size: medium;
         color: #024694;
     }   
+    
  </style>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" style="background-color: white;">
 
-<!-- page Navigation -->
-<nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">    
+   <!-- page Navigation -->
+   <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">    
     <div class="container">
-        <a class="navbar-brand" href="#" style="background-color: #ffffffdd; border-radius: 50px; padding: 10px;">
+        <a class="navbar-brand" href="#" style="background-color: white; border-radius: 50px; padding: 10px;">
             <img src="{{ url_for('static', filename='imgs/yhc_logo.png') }}" alt="" style="width: 200px;">
+            
         </a>
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -57,18 +59,18 @@
                     <a class="nav-link" href="#service">Our Service</a>
                 </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" href="/" style="color: grey;">Home</a>
+                    <a class="nav-link" href="/" style="font-size: medium;color:grey;">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about_us" style="color: grey;">About Us</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="/directory" style="color: grey;">Directory</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact" style="color: grey;">Contact Us</a>
-                </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/about_us" style="font-size: medium;color:grey;">About Us</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                      <a class="nav-link" href="/directory" style="font-size: medium;color:grey;">Directory</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/contact" style="font-size: medium;color:grey;">Contact Us</a>
+                  </li>
                 <!-- <li class="nav-item">
                     <a href="components.html" class="ml-4 nav-link btn btn-primary btn-sm rounded">Components</a>
                 </li> -->
@@ -82,22 +84,22 @@
     <section class="section" id="about" style="background-color: white;">
         <div class="container" style="padding-top:50px;" >
             <div class="row justify-content-between">
-                <div class="col-md-6 pr-md-5 mb-4 mb-md-0 faderight">
+                <div class="col-md-6 pr-md-5 mb-4 mb-md-0">
                     <img src="{{ url_for('get_image', image_id=practice.id) }}" alt="{{ practice.title }}" class="img-fluid" style="object-fit: cover;background-color: white;border-radius: 20px;">
                    
                 </div>
-                <div class="col-md-6 pl-md-5 faderight">
-                    <div class="row">
+                <div class="col-md-6 pl-md-5">
+                    <div class="row" style="padding: 10px;text-align: justify;">
                         <h6 class="section-title mb-0" style="color: #024694;">{{practice.title}}</h6>
     
-                        <div class="col-12 mt-4" >
+                        <!-- <div class="col-12" > -->
                             
                             <p style="font-size: large;" >{{practice.description}}</p>
                             <p style="font-size: medium;" >Contact - {{practice.contact}}</p>
                             <p style="font-size: medium;" >Website -<a href="{{practice.website_link}}"> {{practice.website_link}}</a></p>
 
                             
-                        </div>
+                        <!-- </div> -->
                     </div>
                 </div>
                 
@@ -107,21 +109,20 @@
     <!-- End OF About Section -->
 
 
-    <footer class="footer section has-img-bg pb-0">
+    <footer class="footer section has-img-bg pb-3" style="padding-top: 0;">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 my-3">
-                    <a class="navbar-brand" href="#" style="background-color: #fefff4df; border-radius: 50px; padding: 10px;">
+                    <a class="navbar-brand" href="#" style="background-color: white;; border-radius: 50px; padding: 10px;">
                         <img src="{{ url_for('static', filename='imgs/yhc_logo.png') }}" alt="" style="width: 200px;">
-
                     </a>        
                 </div>
                 <div class="col-md-3 my-3">
-                    <h6 class="mb-0">Visit Us</h6>
+                    <h6 class="mb-0" style="text-decoration: underline;">Visit Us</h6>
                     <p class="mb-4" style="color: white;">Yarrabilba Health City, 26 - 36 Alder Circuit, Yarrabilba, QLD 4207</p>
                 </div>
                 <div class="col-md-3 my-3">
-                    <h6 class="mb-0">More Links</h6>
+                    <h6 class="mb-0" style="text-decoration: underline;">More Links</h6>
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link" href="/about_us" style="color: white;">About Us</a>
@@ -135,7 +136,7 @@
                     </ul>
                 </div>
                 <div class="col-md-3 my-3">
-                    <h6 class="mb-0">Contact</h6>
+                    <h6 class="mb-0" style="text-decoration: underline;">Contact</h6>
                     <p class="mb-1" style="color: white;">Phone</p>
                     <br>
                     <p class="mb-0" style="color: white;">Email</p>

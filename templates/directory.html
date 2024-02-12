@@ -45,7 +45,7 @@
     <!-- page Navigation -->
     <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">    
         <div class="container">
-            <a class="navbar-brand" href="#" style="background-color: #ffffffdd; border-radius: 50px; padding: 10px;">
+            <a class="navbar-brand" href="#" style="background-color: white; border-radius: 50px; padding: 10px;">
                 <img src="static/imgs/yhc_logo.png" alt="" style="width: 200px;">
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,18 +57,18 @@
                         <a class="nav-link" href="#service">Our Service</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="/" style="color: grey;">Home</a>
+                        <a class="nav-link" href="/" style="font-size: medium;">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about_us" style="color: grey;">About Us</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="/directory" style="color: grey;">Directory</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact" style="color: grey;">Contact Us</a>
-                    </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/about_us" style="font-size: medium;">About Us</a>
+                      </li>
+                      
+                      <li class="nav-item">
+                          <a class="nav-link" href="/directory" style="font-size: medium;">Directory</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/contact" style="font-size: medium;">Contact Us</a>
+                      </li>
                     <!-- <li class="nav-item">
                         <a href="components.html" class="ml-4 nav-link btn btn-primary btn-sm rounded">Components</a>
                     </li> -->
@@ -76,7 +76,20 @@
             </div>
         </div>
     </nav>
-
+    <!-- Page Header -->
+    <header class="header" style="height: 500px;background-position: 0 250%;">
+ 
+        <div class="overlay">
+            <h1 >Explore Yarrabilba Health City's Services</h1>
+            <!-- <h1 class="title faderight">Yarrabilba Health City</h1>   -->
+        </div>  
+        <div class="shape">
+            <svg viewBox="0 0 1500 200">
+                <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z"/>
+            </svg>
+        </div>  
+        <div class="mouse-icon"><div class="wheel"></div></div>
+    </header>
 
      <!-- About Section -->
      <section class="section" id="about" style="background-color: white;">
@@ -84,7 +97,7 @@
     
             <div class="row">
                 {% for practice in practices %}
-<div class="col-lg-4 col-md-6 mb-3 faderight">
+<div class="col-lg-4 col-md-6 mb-3">
     <div class="card border-0 shadow" style="height: 100%;">
         <div class="card-img-top rounded-bottom d-flex justify-content-center align-items-center" style="overflow: hidden; height: 200px; background-color: rgb(255, 255, 255);">
             <img src="{{ url_for('get_image', image_id=practice.id) }}" alt="{{ practice.title }}" class="img-fluid" style="object-fit: cover; max-height: 100%; max-width: 100%;">
@@ -111,7 +124,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 my-3">
-                    <a class="navbar-brand" href="#" style="background-color: #fefff4df; border-radius: 50px; padding: 10px;">
+                    <a class="navbar-brand" href="#" style="background-color: white;; border-radius: 50px; padding: 10px;">
                         <img src="static/imgs/yhc_logo.png" alt="" style="width: 200px;">
                     </a>        
                 </div>

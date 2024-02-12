@@ -4506,7 +4506,7 @@ input[type="button"].btn-block {
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
+  color: #495754;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -11639,9 +11639,10 @@ textarea.form-control {
 
 .section.has-img-bg {
   position: relative;
-  background: url(../imgs/yhc_buiding.jpg) no-repeat center top fixed;
+  background: url(../imgs/yhc_building_3.jpg) no-repeat center top fixed;
   background-size: cover;
   color: #fff;
+  background-position: 0 -50%;
 }
 
 .section.has-img-bg * {
@@ -11785,3 +11786,4 @@ textarea.form-control {
       transform: none;
       opacity: 1;
   }
+  

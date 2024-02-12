@@ -46,6 +46,7 @@
         color: #024694;
     }   
 
+    
 
     @media only screen and (max-width: 768px) {
   .header {
@@ -61,7 +62,7 @@
     <!-- page Navigation -->
     <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">
         <div class="container">
-            <a class="navbar-brand" href="#" style="background-color: #fefff4df; border-radius: 50px; padding: 10px;">
+            <a class="navbar-brand" href="#" style="background-color: white;; border-radius: 50px; padding: 10px;">
                 <img src="static/imgs/yhc_logo.png" alt="" style="width: 200px;">
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,18 +74,18 @@
                         <a class="nav-link" href="#service">Our Service</a>
                     </li> -->
                     <li class="nav-item">
-                      <a class="nav-link" href="/">Home</a>
-                  </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about_us">About Us</a>
+                        <a class="nav-link" href="/" style="font-size: medium;">Home</a>
                     </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="/directory">Directory</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact Us</a>
-                    </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/about_us" style="font-size: medium;">About Us</a>
+                      </li>
+                      
+                      <li class="nav-item">
+                          <a class="nav-link" href="/directory" style="font-size: medium;">Directory</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/contact" style="font-size: medium;">Contact Us</a>
+                      </li>
                     <!-- <li class="nav-item">
                         <a href="components.html" class="ml-4 nav-link btn btn-primary btn-sm rounded">Components</a>
                     </li> -->
@@ -152,7 +153,7 @@
   <header class="header" style="height: 500px;background-position: 0 250%;">
  
         <div class="overlay">
-            <h1 class="faderight">About Us</h1>
+            <h1 >About Us</h1>
             <!-- <h1 class="title faderight">Yarrabilba Health City</h1>   -->
         </div>  
         <div class="shape">
@@ -163,63 +164,88 @@
         <div class="mouse-icon"><div class="wheel"></div></div>
     </header>
     <!-- About Section -->
-    <section class="section" id="about" style="background-color: white;height:fit-content;">
-        <div class="container" style="padding-top:0px;">
-            <div class="row justify-content-center align-items-center"> <!-- Centering the row content -->
-                <div class="col-md-6 pr-md-5 mb-4 mb-md-0"> <!-- No need for text-center -->
-                    <h1 class="faderight" style="color: #024694;">Welcome to Yarrabilba Health City (YHC)</h1>
-                    <p class="faderight" style="font-size: large; text-align: justify;">A beacon of health and wellness in the vibrant community of Yarrabilba, nestled within the dynamic city of Logan. Established in May 2023, YHC stands as a testament to the vision of dedicated health professionals who embarked on a journey in 2018 to bring healthcare accessibility and quality for the Yarrabilba community</p>
-                    <p class="faderight" style="text-align: justify;">Driven by a collective passion for fostering healthier lifestyles and enhancing the well-being of residents, YHC was meticulously designed to meet the evolving healthcare needs of a rapidly growing population. Our state-of-the-art infrastructure serves as a cornerstone, providing a conducive environment for multiple healthcare providers to deliver exceptional services and personalized care.
-                    </p>
-                    <p class="faderight" style="text-align: justify;">At YHC, we understand the importance of convenience and comfort in healthcare delivery. Our premises boast amazing facilities and ample parking, ensuring that every visit is not only beneficial but also stress-free. Whether you're seeking routine check-ups, specialized treatments, or preventive care, YHC strives to be your trusted partner in your health journey.
-                        <br>
-                    </p>
-                    <p class="faderight" style="text-align: justify;">Central to our mission is the belief that healthcare should be accessible, affordable, and reliable for everyone in the community. We are committed to breaking down barriers to healthcare access, ensuring that no individual is left behind. As the population of Yarrabilba continues to grow, YHC remains steadfast in its commitment to cater to the ever-growing needs of our community, safeguarding the health and well-being of each resident.
-                    </p>
-                </div>
-                
-            </div>              
+
+
+    <section class="section" id="about" style="background-color: white;">
+        <div class="container">
+            <div class="row justify-content-between" style="padding: 10px;">
+                <div class="col-md-12">
+                    <div class="mb-4">
+                        <h6 class="" style="color: #024694;font-size: 50px;">Welcome To</h6>
+                    </div>
+                    <div class="mb-4">
+                        <h6 class="" style="color: #024694;font-size: 40px;">Yarrabilba Health City</h6>
+                    </div>
+                    
+                    <!-- <img src="static/imgs/yhc_building_2.jpeg" alt="" class="w-100 mt-3 shadow-sm" style="border-radius: 20px;"> -->
+    
+                    <div class="mb-4">
+                        <p style="color: #024694;">
+                            Welcome to Yarrabilba Health City (YHC), a beacon of health and wellness in the vibrant community of Yarrabilba, nestled within the dynamic city of Logan. Established in May 2023, YHC stands as a testament to the vision of dedicated health professionals who embarked on a journey in 2018 to bring healthcare accessibility and quality for the Yarrabilba community.
+                        </p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <p style="color: #024694;">Driven by a collective passion for fostering healthier lifestyles and enhancing the well-being of residents, YHC was meticulously designed to meet the evolving healthcare needs of a rapidly growing population. Our state-of-the-art infrastructure serves as a cornerstone, providing a conducive environment for multiple healthcare providers to deliver exceptional services and personalised care.</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <p style="text-align: justify;">At YHC, we understand the importance of convenience and comfort in healthcare delivery. Our premises boast amazing facilities and ample parking, ensuring that every visit is not only beneficial but also stress-free. Whether you're seeking routine check-ups, specialized treatments, or preventive care, YHC strives to be your trusted partner in your health journey.
+                            <br>
+                        </p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <p style="text-align: justify;">Central to our mission is the belief that healthcare should be accessible, affordable, and reliable for everyone in the community. We are committed to breaking down barriers to healthcare access, ensuring that no individual is left behind. As the population of Yarrabilba continues to grow, YHC remains steadfast in its commitment to cater to the ever-growing needs of our community, safeguarding the health and well-being of each resident.
+                        </p>
+                    </div>
+                    
+                    <a href="/about_us" class="btn btn-primary">Read More</a>
+                </div>              
+            </div>
         </div>
     </section>
+    
     
     <!-- End OF About Section -->
 
 
-<footer class="footer section has-img-bg pb-0" style="padding-top: 0;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 my-3">
-                <a class="navbar-brand" href="#" style="background-color: #fefff4df; border-radius: 50px; padding: 10px;">
-                    <img src="static/imgs/yhc_logo.png" alt="" style="width: 200px;">
-                </a>        
-            </div>
-            <div class="col-md-3 my-3">
-                <h6 class="mb-0" style="text-decoration: underline;">Visit Us</h6>
-                <p class="mb-4" style="color: white;">Yarrabilba Health City, 26 - 36 Alder Circuit, Yarrabilba, QLD 4207</p>
-            </div>
-            <div class="col-md-3 my-3">
-                <h6 class="mb-0" style="text-decoration: underline;">More Links</h6>
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about_us" style="color: white;">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/directory" style="color: white;">Directory</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact" style="color: white;">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-3 my-3">
-                <h6 class="mb-0" style="text-decoration: underline;">Contact</h6>
-                <p class="mb-1" style="color: white;">Phone</p>
-                <br>
-                <p class="mb-0" style="color: white;">Email</p>
+    <footer class="footer section has-img-bg pb-0" style="padding-top: 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 my-3 d-flex align-items-center">
+                    <a class="navbar-brand" href="#" style="background-color: white; border-radius: 50px; padding: 10px;">
+                        <img src="static/imgs/yhc_logo.png" alt="" style="width: 250px;">
+                    </a>        
+                </div>
+                <div class="col-md-3 my-3">
+                    <h6 class="mb-0" style="text-decoration: underline;">Visit Us</h6>
+                    <p class="mb-4" style="color: white;">Yarrabilba Health City, 26 - 36 Alder Circuit, Yarrabilba, QLD 4207</p>
+                </div>
+                <div class="col-md-3 my-3">
+                    <h6 class="mb-0" style="text-decoration: underline;">More Links</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about_us" style="color: white;">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/directory" style="color: white;">Directory</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact" style="color: white;">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 my-3">
+                    <h6 class="mb-0" style="text-decoration: underline;">Contact</h6>
+                    <p class="mb-1" style="color: white;">Phone</p>
+                    <br>
+                    <p class="mb-0" style="color: white;">Email</p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+    
 
   
 	
