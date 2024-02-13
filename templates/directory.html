@@ -80,7 +80,9 @@
     <header class="header" style="height: 500px;background-position: 0 250%;">
  
         <div class="overlay">
-            <h1 >Explore Yarrabilba Health City's Services</h1>
+
+            <h1 >Get To Know The Practices at</h1>
+            <h1 class="title faderight">Yarrabilba Health City</h1>  
             <!-- <h1 class="title faderight">Yarrabilba Health City</h1>   -->
         </div>  
         <div class="shape">
@@ -92,71 +94,106 @@
     </header>
 
      <!-- About Section -->
-     <section class="section" id="about" style="background-color: white;">
-        <div class="container" style="padding-top: 50px;">
-    
-            <div class="row">
-                {% for practice in practices %}
-<div class="col-lg-4 col-md-6 mb-3">
-    <div class="card border-0 shadow" style="height: 100%;">
-        <div class="card-img-top rounded-bottom d-flex justify-content-center align-items-center" style="overflow: hidden; height: 200px; background-color: rgb(255, 255, 255);">
-            {% set first_image = practice.images[0] %}
-            <img src="{{ url_for('get_image', image_id=first_image.id) }}" alt="{{ practice.title }}" class="img-fluid" style="object-fit: cover; max-height: 100%; max-width: 100%;">
-        </div>
-        <div class="card-body bg-dark text-white rounded-top" style="height: 150px;">
-            <h5 class="card-title">{{ practice.title }}</h5>
-            <!-- <p class="card-text">{{ practice.description }}</p> -->
-            <a href="{{ url_for('practice_details', practice_id=practice.id) }}" class="btn btn-primary">Read More</a>
+<section class="section" id="about" style="background-color: white;">
+    <div class="container" style="padding-top: 50px;">
+        <div class="row">
+            {% for practice in practices %}
+            <div class="col-lg-4 col-md-6 mb-3">
+                <div class="card border-0" style="height: 100%;">
+                    <div class="card-img-top rounded-bottom d-flex justify-content-center align-items-center" style="overflow: hidden; height: 200px; background-color: rgb(255, 255, 255);">
+                        {% set first_image = practice.images[0] %}
+                        <img src="{{ url_for('get_image', image_id=first_image.id) }}" alt="{{ practice.title }}" class="img-fluid" style="object-fit: cover; max-height: 100%; max-width: 100%;">
+                    </div>
+                    <div class="card-body bg-white text-dark rounded-top d-flex flex-column justify-content-center align-items-center" style="height: 150px;">
+                        <h5 class="card-title">{{ practice.title }}</h5>
+                        <!-- <p class="card-text">{{ practice.description }}</p> -->
+                    </div>
+                    <div class=" bg-white text-center">
+                        <a href="{{ url_for('practice_details', practice_id=practice.id) }}" class="btn btn-primary" style="border-radius: 20px;">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
-</div>
-{% endfor %}
+</section>
 
 
-            </div>
-            
-            
-    
-        </div>
-    </section>
     
 
 
-    <footer class="footer section has-img-bg pb-3" style="padding-top: 0;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 my-3">
-                    <a class="navbar-brand" href="#" style="background-color: #fefff4df; border-radius: 50px; padding: 10px;">
-                        <img src="static/imgs/yhc_logo.png" alt="" style="width: 200px;">
-                    </a>        
-                </div>
-                <div class="col-md-3 my-3">
-                    <h6 class="mb-0" style="text-decoration: underline;">Visit Us</h6>
-                    <p class="mb-4" style="color: white;">Yarrabilba Health City, 26 - 36 Alder Circuit, Yarrabilba, QLD 4207</p>
-                </div>
-                <div class="col-md-3 my-3">
-                    <h6 class="mb-0" style="text-decoration: underline;">More Links</h6>
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about_us" style="color: white;">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/directory" style="color: white;">Directory</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/contact" style="color: white;">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-3 my-3">
-                    <h6 class="mb-0" style="text-decoration: underline;">Contact</h6>
-                    <p class="mb-1" style="color: white;">Phone</p>
-                    <br>
-                    <p class="mb-0" style="color: white;">Email</p>
-                </div>
+    <!-- Footer -->
+    <footer
+            class="text-center text-lg-start text-white section has-img-bg"
+            >
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+  
+                <a class="navbar-brand" href="#" style="background-color: #ffffffdf; border-radius: 50px; padding: 10px;">
+                    <img src="static/imgs/yhc_logo.png" alt="" style="width: 250px;">
+                </a>  
+
             </div>
-        </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Visit Us</h5>
+              <p class="mb-0 text-left" style="color: white;">Yarrabilba Health City, 26 - 36 Alder Circuit, Yarrabilba, QLD 4207</p>
+
+  
+             
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">More Links</h5>
+  
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="/about_us" class="text-white">About Us</a>
+                </li>
+                <li>
+                  <a href="/directory" class="text-white">Directory</a>
+                </li>
+                <li>
+                  <a href="/contact" class="text-white">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Contact</h5>
+  
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Phone</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Email</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+  
+          </div>
+          <!--Grid row-->
+        </section>
+
+      </div>
+  
+      
     </footer>
+    <!-- Footer -->
 
   
 	

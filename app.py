@@ -80,7 +80,7 @@ def submit_form():
     message = Mail(
         from_email=email,
         to_emails=TO_EMAIL,
-        subject="New Inquiry from Website",
+        subject=f"{enquiry_type}",
         plain_text_content=message_content)
 
     try:

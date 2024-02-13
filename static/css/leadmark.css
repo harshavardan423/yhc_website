@@ -11356,7 +11356,7 @@ textarea.form-control {
   display: -webkit-flex;
   display: flex;
   min-height: 70px;
-  border-top: 1px solid #dee2e6;
+  border-top: 0px solid #dee2e6;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -11376,7 +11376,6 @@ textarea.form-control {
 
 .footer a, .footer p {
   color: #343a40;
-  padding: 4px 0;
   display: inline-block;
   margin: 0;
 }
