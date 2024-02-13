@@ -12,3 +12,4 @@ mysql-connector-python==8.2.0
 mysqlclient==2.2.1
 Flask-Session==0.6.0
 SQLAlchemy==1.4.42
+sendgrid==6.11.0
