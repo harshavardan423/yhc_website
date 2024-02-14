@@ -11656,7 +11656,7 @@ textarea.form-control {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
 
@@ -11786,3 +11786,7 @@ textarea.form-control {
       opacity: 1;
   }
   
+
+  footer p {
+    font-size: medium;
+  }
