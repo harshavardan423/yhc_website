@@ -63,21 +63,29 @@
     /* Previous button */
     .carousel-control-prev .carousel-control-prev-icon {
         border: 2px solid rgb(0, 0, 0); /* Change border thickness and color as needed */
-        background-color: rgb(95, 138, 255);
+        background-color: rgb(143, 143, 143);
         border-radius: 50%; /* Make the border circular */
     }
 
     /* Next button */
     .carousel-control-next .carousel-control-next-icon {
         border: 2px solid rgb(0, 0, 0); /* Change border thickness and color as needed */
-        background-color: rgb(95, 138, 255);
+        background-color: rgb(143, 143, 143);
 
         border-radius: 50%; /* Make the border circular */
     }
 
     footer p {
     font-size: medium;
+    text-align: left;
     color: white;
+  }
+
+  footer h6{
+    font-size: large;
+    text-align: left;
+
+    
   }
     
     
@@ -163,8 +171,7 @@
 </section>
 
 <!-- End OF About Section -->
-
-<footer class="text-center text-lg-start text-white section has-img-bg" style="background-color: #1c2331;">
+<footer class="text-center text-lg-start text-white section has-img-bg" style="background-color: #1c2331;padding-top: 30px;">
   <!-- Section: Social media -->
 
   <!-- Section: Links  -->
@@ -173,27 +180,30 @@
           <!-- Grid row -->
           <div class="row mt-3">
 
-              <div class="container2">
+              <div class="container">
                   <div class="row justify-content-center">
+
                       <!-- Grid column -->
-                      <div class="mx-auto mb-4">
+                      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto" style="margin: 20px;margin-top: 0px;">
                           <!-- Content -->
                           <h6 class="text-uppercase fw-bold"></h6>
                               <a class="navbar-brand" href="#" style="background-color: #ffffffdf; border-radius: 50px; padding: 10px;">
                                   <!-- Adjusted the width of the logo -->
                                   <img src="{{ url_for('static', filename='imgs/yhc_logo.png') }}" alt="" style="width: 250px;">
-
-                              </a>
+                                </a>
                       </div>
-                      <!-- Grid column -->
 
                       <!-- Grid column -->
                       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
                           <!-- Links -->
                           <h6 class="text-uppercase fw-bold">Visit Us</h6>
-                          <hr class="" style="width: 250px; background-color: white; height: 2px" />
+                          <hr class="" style="width: 200px; background-color: white; height: 2px" />
                           <p>
-                              <a href="#!" class="text-white">Yarrabilba Health City, 26 - 36 Alder Circuit, Yarrabilba, QLD 4207</a>
+                              <a href="#!" class="text-white">Yarrabilba Health City,
+                                  <br>
+                                  26 - 36 Alder Circuit,
+                                  <br>
+                                  Yarrabilba, QLD 4207</a>
                           </p>
                       </div>
                       <!-- Grid column -->

@@ -40,18 +40,19 @@
         font-size: medium;
     }   
 
+
     footer p {
     font-size: medium;
     text-align: left;
-    color: white;
   }
 
   footer h6{
-    font-size: x-large;
+    font-size: large;
     text-align: left;
 
     
   }
+    
  </style>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
@@ -94,7 +95,7 @@
  
         <div class="overlay">
 
-            <h1 >Get To Know The Practices at</h1>
+            <h1 style="text-align: center;">Get To Know  The Practices  at</h1>
             <h1 class="title faderight">Yarrabilba Health City</h1>  
             <!-- <h1 class="title faderight">Yarrabilba Health City</h1>   -->
         </div>  
@@ -117,9 +118,10 @@
                       {% set first_image = practice.images[0] %}
                       <img src="{{ url_for('get_image', image_id=first_image.id) }}" alt="{{ practice.title }}" class="img-fluid" style="object-fit: cover; max-height: 100%; max-width: 100%;">
                   </div>
-                  <div class="card-body bg-white text-dark rounded-top d-flex flex-column justify-content-center align-items-center" style="height: 80px;">
+                  <div class="card-body bg-white text-dark rounded-top d-flex justify-content-center align-items-center" style="height: 80px;">
                     <h5 class="card-title mb-0">{{ practice.title }}</h5>
                 </div>
+                
                   
                   <div class=" bg-white text-center" style="margin-top: 0px;"> <!-- Adjust the margin-top value as needed -->
                       <a href="{{ url_for('practice_details', practice_id=practice.id) }}" class="btn btn-primary" style="border-radius: 20px;">Read More</a>
@@ -135,7 +137,7 @@
     
 
 
-<footer class="text-center text-lg-start text-white section has-img-bg" style="background-color: #1c2331;">
+<footer class="text-center text-lg-start text-white section has-img-bg" style="background-color: #1c2331;padding-top: 30px;">
   <!-- Section: Social media -->
 
   <!-- Section: Links  -->
@@ -144,10 +146,11 @@
           <!-- Grid row -->
           <div class="row mt-3">
 
-              <div class="container2">
+              <div class="container">
                   <div class="row justify-content-center">
+
                       <!-- Grid column -->
-                      <div class="mx-auto mb-4">
+                      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto" style="margin: 20px;margin-top: 0px;">
                           <!-- Content -->
                           <h6 class="text-uppercase fw-bold"></h6>
                               <a class="navbar-brand" href="#" style="background-color: #ffffffdf; border-radius: 50px; padding: 10px;">
@@ -155,15 +158,18 @@
                                   <img src="static/imgs/yhc_logo.png" alt="" style="max-width: 250px;">
                               </a>
                       </div>
-                      <!-- Grid column -->
 
                       <!-- Grid column -->
                       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
                           <!-- Links -->
                           <h6 class="text-uppercase fw-bold">Visit Us</h6>
-                          <hr class="" style="width: 250px; background-color: white; height: 2px" />
+                          <hr class="" style="width: 200px; background-color: white; height: 2px" />
                           <p>
-                              <a href="#!" class="text-white">Yarrabilba Health City, 26 - 36 Alder Circuit, Yarrabilba, QLD 4207</a>
+                              <a href="#!" class="text-white">Yarrabilba Health City,
+                                  <br>
+                                  26 - 36 Alder Circuit,
+                                  <br>
+                                  Yarrabilba, QLD 4207</a>
                           </p>
                       </div>
                       <!-- Grid column -->
