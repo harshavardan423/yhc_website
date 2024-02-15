@@ -118,7 +118,7 @@
                       {% set first_image = practice.images[0] %}
                       <img src="{{ url_for('get_image', image_id=first_image.id) }}" alt="{{ practice.title }}" class="img-fluid" style="object-fit: cover; max-height: 100%; max-width: 100%;">
                   </div>
-                  <div class="card-body bg-white text-dark rounded-top d-flex justify-content-center align-items-center" style="height: 80px;">
+                  <div class="card-body bg-white text-dark rounded-top d-flex justify-content-center " style="height: 80px;text-align: center;">
                     <h5 class="card-title mb-0">{{ practice.title }}</h5>
                 </div>
                 
