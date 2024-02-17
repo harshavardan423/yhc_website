@@ -122,6 +122,40 @@
             margin-bottom: 0; /* Remove bottom margin on smaller screens */
         }
     }
+
+
+    #video-bg {
+            position: absolute;
+            top: 0;
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%);
+            min-width: 100%; /* Ensure video covers the entire container */
+            min-height: 100%;
+            width: auto;
+            height: auto;
+        }
+        @media (max-width: 768px) {
+    #video-bg {
+        position: absolute;
+        top: 0;
+        left: 100%; /* Center horizontally */
+        transform: translateX(-66%);
+
+        min-width: 10%; /* Adjust as needed to make it smaller */
+        min-height: 10%; /* Adjust as needed to make it smaller */
+        width:fit-content;
+        height: 100%;
+    }
+
+    
+
+.title {
+    text-align: center; /* Make it inline-block to center it */
+}
+
+}
+
+    
 </style>
 
 
@@ -166,7 +200,7 @@
     <!-- Page Header -->
     <header class="header">
         <video autoplay muted loop id="video-bg">
-            <source src="static/imgs/yhc_drone_2.mp4" type="video/mp4" style="background-position: 10% 100%;">
+            <source src="static/imgs/yhc_drone_3.mp4" type="video/mp4" style="background-position: 10% 100%;">
             Your browser does not support the video tag.
         </video>
         <div class="overlay">
